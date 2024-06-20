@@ -14,10 +14,12 @@ const uploadFile = async (localFilePath) => {
             resource_type: 'auto'
         })
         fs.unlinkSync(localFilePath)
-        console.log("File has been uploaded successfully", uploadResult.url);
-        return uploadResult.url
+        //console.log("File has been uploaded successfully", uploadResult.url);
+        return uploadResult
     } catch (error) {
         fs.unlinkSync(localFilePath)
         return null
     }
 }
+
+export {uploadFile}
